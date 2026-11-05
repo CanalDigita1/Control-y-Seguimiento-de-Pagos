@@ -1,0 +1,281 @@
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-width: 320px;
+}
+
+img,
+canvas,
+svg,
+video {
+  max-width: 100%;
+}
+
+.page,
+.card,
+.fld,
+.kpi {
+  min-width: 0;
+}
+
+.tbl-wrap,
+.tabs-in,
+.asesores {
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 1024px) {
+  .kpis,
+  .vgrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .g2,
+  .g3,
+  .g21 {
+    grid-template-columns: 1fr;
+  }
+
+  .brand {
+    flex: 1 1 100%;
+  }
+
+  .meta {
+    width: 100%;
+  }
+
+  .meta-item {
+    flex: 1 1 200px;
+  }
+}
+
+@media (max-width: 760px) {
+  main {
+    padding: 12px 12px 32px;
+  }
+
+  .topbar-in {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  h1 {
+    font-size: 18px;
+  }
+
+  .meta {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .meta-item {
+    min-width: 0;
+  }
+
+  #p-calendario .grid.g2,
+  #p-ranking .grid.g2 {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .filterbar-in {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px 8px;
+  }
+
+  .fld select,
+  .fld select#f-etapa {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .fb-actions {
+    grid-column: 1 / -1;
+    margin-left: 0;
+    justify-content: space-between;
+  }
+
+  .callout {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .callout .sep {
+    display: none;
+  }
+
+  .toolbar .search {
+    max-width: none;
+    flex: 1 1 100%;
+  }
+
+  .seg {
+    display: flex;
+    width: 100%;
+  }
+
+  .seg button {
+    flex: 1;
+  }
+
+  .card {
+    padding: 12px;
+  }
+
+  .modal {
+    padding: 0;
+  }
+
+  .modal-card {
+    border-radius: 0;
+    min-height: 100vh;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+
+  h1 {
+    font-size: 16px;
+  }
+
+  .sub,
+  .meta-item small {
+    font-size: 11px;
+  }
+
+  .kpi,
+  .vbox {
+    padding: 10px;
+  }
+
+  .kpi .val,
+  .vbox .v,
+  .asm .amt {
+    font-size: 18px;
+  }
+
+  .kpis,
+  .vgrid {
+    gap: 8px;
+  }
+
+  .tab {
+    padding: 10px 8px;
+    font-size: 13px;
+  }
+
+  /* Calendarios: solo número del día y un punto de color */
+  .day {
+    min-height: 44px;
+    padding: 4px;
+  }
+
+  .day .ct,
+  .day .ev,
+  .day .prevmark {
+    display: none;
+  }
+
+  .day.corte::after,
+  .day.has::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 7px;
+    width: 7px;
+    height: 7px;
+    margin-left: -3.5px;
+    border-radius: 50%;
+    background: var(--ink-2);
+  }
+
+  .day.has::after {
+    background: var(--brand);
+  }
+
+  .asm {
+    grid-template-columns: 58px minmax(0, 1fr);
+    gap: 10px;
+    padding: 10px;
+  }
+
+  /* Detalle · vista resumida: cada nivel en su propia fila */
+  #tblResumida > table > thead {
+    display: none;
+  }
+
+  #tblResumida > table,
+  #tblResumida > table > tbody,
+  #tblResumida > table > tbody > tr {
+    display: block;
+  }
+
+  #tblResumida > table > tbody > tr.lv {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px 8px;
+    padding: 7px 10px;
+    border-bottom: 1px solid var(--line-2);
+  }
+
+  #tblResumida tr.lv > td {
+    padding: 0;
+    border: 0;
+    white-space: normal;
+    background: transparent !important;
+  }
+
+  #tblResumida tr.lv > td:empty {
+    display: none;
+  }
+
+  #tblResumida tr.lv > td:not(.num):not(:last-child) {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  #tblResumida tr.lv > td:last-child {
+    flex: 1 1 100%;
+    padding-left: 14px;
+  }
+
+  #tblResumida tr.lv-R {
+    background: #FFF2EB;
+  }
+
+  #tblResumida tr.lv-Z {
+    padding-left: 24px;
+  }
+
+  #tblResumida tr.lv-A {
+    padding-left: 40px;
+  }
+
+  #tblResumida td.sub {
+    display: block;
+    padding: 6px 10px 12px 16px !important;
+  }
+
+  .subtbl {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .subtbl th,
+  .subtbl td {
+    padding: 5px 6px !important;
+    white-space: normal;
+  }
+}
